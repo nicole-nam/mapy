@@ -28,22 +28,24 @@ if (navigator.geolocation)
       }).addTo(map);
 
       map.on('click', function (e) {
-        const { lat, lng } = e.latlng;
-        console.log(lat, lng);
+        form.classList.remove('hidden');
+        inputDistance.focus();
+        // const { lat, lng } = e.latlng;
+        // console.log(lat, lng);
 
-        L.marker([lat, lng])
-          .addTo(map)
-          .bindPopup(
-            L.popup({
-              maxWidth: 250,
-              minWidth: 100,
-              autoClose: false,
-              closeOnClick: false,
-              className: 'running-popup',
-            })
-          )
-          .setPopupContent('hello')
-          .openPopup();
+        // L.marker([lat, lng])
+        //   .addTo(map)
+        //   .bindPopup(
+        //     L.popup({
+        //       maxWidth: 250,
+        //       minWidth: 100,
+        //       autoClose: false,
+        //       closeOnClick: false,
+        //       className: 'running-popup',
+        //     })
+        //   )
+        //   .setPopupContent('hello')
+        //   .openPopup();
       });
     },
     function () {
