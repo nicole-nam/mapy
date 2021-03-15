@@ -27,10 +27,15 @@ if (navigator.geolocation)
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      L.marker(coords)
-        .addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+      map.on('click', function (e) {
+        const { lat, lng } = e.latlng;
+        console.log(lat, lng);
+
+        L.marker([lat, lng])
+          .addTo(map)
+          .bindPopup('here!')
+          .openPopup();
+      });
     },
     function () {
       alert('Could not get your position');
